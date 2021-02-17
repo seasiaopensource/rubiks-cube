@@ -1,9 +1,3 @@
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author Larry Battle / http://bateru.com/news
- * @author bhouston / http://exocortex.com
- */
-
 var THREE = { REVISION: '63' };
 
 self.console = self.console || {
@@ -22,10 +16,8 @@ String.prototype.trim = String.prototype.trim || function () {
 
 };
 
-// based on https://github.com/documentcloud/underscore/blob/bf657be243a075b5e72acc8a83e6f12a564d8f55/underscore.js#L767
 THREE.extend = function ( obj, source ) {
 
-	// ECMAScript5 compatibility based on: http://www.nczonline.net/blog/2012/12/11/are-your-mixins-ecmascript-5-compatible/
 	if ( Object.keys ) {
 
 		var keys = Object.keys( source );
@@ -57,12 +49,7 @@ THREE.extend = function ( obj, source ) {
 
 };
 
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
 
-// requestAnimationFrame polyfill by Erik Möller
-// fixes from Paul Irish and Tino Zijdel
-// using 'self' instead of 'window' for compatibility with both NodeJS and IE10.
 ( function () {
 
 	var lastTime = 0;
@@ -651,12 +638,6 @@ THREE.ColorKeywords = { "aliceblue": 0xF0F8FF, "antiquewhite": 0xFAEBD7, "aqua":
 "springgreen": 0x00FF7F, "steelblue": 0x4682B4, "tan": 0xD2B48C, "teal": 0x008080, "thistle": 0xD8BFD8, "tomato": 0xFF6347, "turquoise": 0x40E0D0,
 "violet": 0xEE82EE, "wheat": 0xF5DEB3, "white": 0xFFFFFF, "whitesmoke": 0xF5F5F5, "yellow": 0xFFFF00, "yellowgreen": 0x9ACD32 };
 
-/**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://exocortex.com
- */
 
 THREE.Quaternion = function ( x, y, z, w ) {
 
@@ -1428,14 +1409,6 @@ THREE.Vector2.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author *kile / http://kile.stravaganza.org/
- * @author philogb / http://blog.thejit.org/
- * @author mikael emtinger / http://gomo.se/
- * @author egraether / http://egraether.com/
- * @author WestLangley / http://github.com/WestLangley
- */
 
 THREE.Vector3 = function ( x, y, z ) {
 
@@ -2110,13 +2083,7 @@ THREE.extend( THREE.Vector3.prototype, {
 
 } );
 
-/**
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author philogb / http://blog.thejit.org/
- * @author mikael emtinger / http://gomo.se/
- * @author egraether / http://egraether.com/
- * @author WestLangley / http://github.com/WestLangley
- */
+
 
 THREE.Vector4 = function ( x, y, z, w ) {
 
@@ -2687,11 +2654,6 @@ THREE.Vector4.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://exocortex.com
- */
 
 THREE.Euler = function ( x, y, z, order ) {
 
@@ -3441,10 +3403,6 @@ THREE.Box2.prototype = {
 
 };
 
-/**
- * @author bhouston / http://exocortex.com
- * @author WestLangley / http://github.com/WestLangley
- */
 
 THREE.Box3 = function ( min, max ) {
 
@@ -3819,11 +3777,6 @@ THREE.Box3.prototype = {
 
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://exocortex.com
- */
 
 THREE.Matrix3 = function ( n11, n12, n13, n21, n22, n23, n31, n32, n33 ) {
 
@@ -4045,18 +3998,7 @@ THREE.Matrix3.prototype = {
 
 };
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author philogb / http://blog.thejit.org/
- * @author jordi_ros / http://plattsoft.com
- * @author D1plo1d / http://github.com/D1plo1d
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author timknip / http://www.floorplanner.com/
- * @author bhouston / http://exocortex.com
- * @author WestLangley / http://github.com/WestLangley
- */
+
 
 
 THREE.Matrix4 = function ( n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44 ) {
@@ -6196,13 +6138,7 @@ THREE.Math = {
 
 };
 
-/**
- * Spline from Tween.js, slightly optimized (and trashed)
- * http://sole.github.com/tween.js/examples/05_spline.html
- *
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- */
+
 
 THREE.Spline = function ( points ) {
 
@@ -6659,9 +6595,6 @@ THREE.Clock.prototype = {
 
 };
 
-/**
- * https://github.com/mrdoob/eventdispatcher.js/
- */
 
 THREE.EventDispatcher = function () {}
 
@@ -7188,12 +7121,6 @@ THREE.EventDispatcher.prototype = {
 
 }( THREE ) );
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- */
 
 THREE.Object3D = function () {
 
@@ -7761,11 +7688,7 @@ THREE.EventDispatcher.prototype.apply( THREE.Object3D.prototype );
 
 THREE.Object3DIdCount = 0;
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author julianwa / https://github.com/julianwa
- */
+
 
 THREE.Projector = function () {
 
@@ -9698,11 +9621,7 @@ THREE.BufferGeometry.prototype = {
 
 THREE.EventDispatcher.prototype.apply( THREE.BufferGeometry.prototype );
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author WestLangley / http://github.com/WestLangley
-*/
+
 
 THREE.Camera = function () {
 
@@ -14202,11 +14121,7 @@ THREE.SpriteCanvasMaterial.prototype.clone = function () {
 // backwards compatibility
 
 THREE.ParticleCanvasMaterial = THREE.SpriteCanvasMaterial;
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author szimek / https://github.com/szimek/
- */
+
 
 THREE.Texture = function ( image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy ) {
 
@@ -19583,12 +19498,6 @@ THREE.ShaderLib = {
 
 };
 
-/**
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author szimek / https://github.com/szimek/
- */
 
 THREE.WebGLRenderer = function ( parameters ) {
 
@@ -26139,10 +26048,6 @@ THREE.WebGLRenderer = function ( parameters ) {
 
 };
 
-/**
- * @author szimek / https://github.com/szimek/
- * @author alteredq / http://alteredqualia.com/
- */
 
 THREE.WebGLRenderTarget = function ( width, height, options ) {
 
@@ -26997,11 +26902,6 @@ THREE.ImageUtils = {
 
 		var dds = { mipmaps: [], width: 0, height: 0, format: null, mipmapCount: 1 };
 
-		// Adapted from @toji's DDS utils
-		//	https://github.com/toji/webgl-texture-utils/blob/master/texture-util/dds.js
-
-		// All values and structures referenced from:
-		// http://msdn.microsoft.com/en-us/library/bb943991.aspx/
 
 		var DDS_MAGIC = 0x20534444;
 
@@ -32655,11 +32555,6 @@ THREE.ShapeGeometry.prototype.addShape = function ( shape, options ) {
 
 };
 
-/**
- * @author astrodud / http://astrodud.isgreat.org/
- * @author zz85 / https://github.com/zz85
- * @author bhouston / http://exocortex.com
- */
 
 // points - to create a closed torus, one must use a set of points 
 //    like so: [ a, b, c, d, a ], see first is the same as last.
@@ -33254,18 +33149,6 @@ THREE.TorusKnotGeometry = function ( radius, tube, radialSegments, tubularSegmen
 
 THREE.TorusKnotGeometry.prototype = Object.create( THREE.Geometry.prototype );
 
-/**
- * @author WestLangley / https://github.com/WestLangley
- * @author zz85 / https://github.com/zz85
- * @author miningold / https://github.com/miningold
- *
- * Modified from the TorusKnotGeometry by @oosmoxiecode
- *
- * Creates a tube which extrudes along a 3d spline
- *
- * Uses parallel transport frames as described in
- * http://www.cs.indiana.edu/pub/techreports/TR425.pdf
- */
 
 THREE.TubeGeometry = function( path, segments, radius, radialSegments, closed ) {
 
@@ -33528,11 +33411,6 @@ THREE.TubeGeometry.FrenetFrames = function(path, segments, closed) {
 	}
 };
 
-/**
- * @author clockworkgeek / https://github.com/clockworkgeek
- * @author timothypratley / https://github.com/timothypratley
- * @author WestLangley / http://github.com/WestLangley
-*/
 
 THREE.PolyhedronGeometry = function ( vertices, faces, radius, detail ) {
 
@@ -33753,9 +33631,6 @@ THREE.PolyhedronGeometry = function ( vertices, faces, radius, detail ) {
 
 THREE.PolyhedronGeometry.prototype = Object.create( THREE.Geometry.prototype );
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
 
 THREE.IcosahedronGeometry = function ( radius, detail ) {
 
@@ -33783,9 +33658,6 @@ THREE.IcosahedronGeometry = function ( radius, detail ) {
 
 THREE.IcosahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
 
 THREE.OctahedronGeometry = function ( radius, detail ) {
 
@@ -33802,9 +33674,6 @@ THREE.OctahedronGeometry = function ( radius, detail ) {
 
 THREE.OctahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );
 
-/**
- * @author timothypratley / https://github.com/timothypratley
- */
 
 THREE.TetrahedronGeometry = function ( radius, detail ) {
 
@@ -33821,15 +33690,6 @@ THREE.TetrahedronGeometry = function ( radius, detail ) {
 };
 
 THREE.TetrahedronGeometry.prototype = Object.create( THREE.Geometry.prototype );
-
-/**
- * @author zz85 / https://github.com/zz85
- * Parametric Surfaces Geometry
- * based on the brilliant article by @prideout http://prideout.net/blog/?p=44
- *
- * new THREE.ParametricGeometry( parametricFunction, uSegments, ySegements );
- *
- */
 
 THREE.ParametricGeometry = function ( func, slices, stacks ) {
 
@@ -33931,19 +33791,7 @@ THREE.AxisHelper = function ( size ) {
 
 THREE.AxisHelper.prototype = Object.create( THREE.Line.prototype );
 
-/**
- * @author WestLangley / http://github.com/WestLangley
- * @author zz85 / http://github.com/zz85
- * @author bhouston / http://exocortex.com
- *
- * Creates an arrow for visualizing directions
- *
- * Parameters:
- *  dir - Vector3
- *  origin - Vector3
- *  length - Number
- *  hex - color in hex value
- */
+
 
 THREE.ArrowHelper = function ( dir, origin, length, hex ) {
 
@@ -34110,11 +33958,7 @@ THREE.BoxHelper.prototype.update = function ( object ) {
 
 };
 
-/**
- * @author WestLangley / http://github.com/WestLangley
- */
 
-// a helper to show the world-axis-aligned bounding box for an object
 
 THREE.BoundingBoxHelper = function ( object, hex ) {
 
@@ -34140,14 +33984,7 @@ THREE.BoundingBoxHelper.prototype.update = function () {
 
 };
 
-/**
- * @author alteredq / http://alteredqualia.com/
- *
- *	- shows frustum, line of sight and up of the camera
- *	- suitable for fast updates
- * 	- based on frustum visualization in lightgl.js shadowmap example
- *		http://evanw.github.com/lightgl.js/tests/shadowmap.html
- */
+
 
 THREE.CameraHelper = function ( camera ) {
 
@@ -34326,12 +34163,6 @@ THREE.CameraHelper.prototype.update = function () {
 
 }();
 
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
- */
-
 THREE.DirectionalLightHelper = function ( light, size ) {
 
 	THREE.Object3D.call( this );
@@ -34398,10 +34229,6 @@ THREE.DirectionalLightHelper.prototype.update = function () {
 }();
 
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
-*/
 
 THREE.FaceNormalsHelper = function ( object, size, hex, linewidth ) {
 
@@ -34647,11 +34474,6 @@ THREE.PointLightHelper.prototype.update = function () {
 };
 
 
-/**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
-*/
 
 THREE.SpotLightHelper = function ( light ) {
 
@@ -34707,10 +34529,7 @@ THREE.SpotLightHelper.prototype.update = function () {
 
 }();
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
-*/
+
 
 THREE.VertexNormalsHelper = function ( object, size, hex, linewidth ) {
 
@@ -34808,10 +34627,7 @@ THREE.VertexNormalsHelper.prototype.update = ( function ( object ) {
 
 }());
 
-/**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
-*/
+
 
 THREE.VertexTangentsHelper = function ( object, size, hex, linewidth ) {
 
