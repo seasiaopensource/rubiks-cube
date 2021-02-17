@@ -1,0 +1,61 @@
+html, body {
+	height: 100%;
+}
+
+body { 
+	margin: 0; 
+	overflow: hidden; 
+	background-color: #b9b9b9;
+	color: #eee;
+}
+
+p#info {
+	position: absolute;
+	bottom: 0;
+	margin: 10px;
+}
+
+a {
+	color: #ff7600;
+	text-decoration: none;
+}
+
+#controls { 
+	position: absolute;
+    top: 50px;
+    list-style-type: none;
+    left: 10%;
+}
+
+#controls > li {
+	margin: 0 5px;
+	padding: 0;
+}
+
+
+#controls > li:last-child:after {
+	content: none;
+}
+
+#controls > li a, #controls > li label {
+	margin-right: 10px;
+    font-size: 1.2em;
+    color: #000000;
+    line-height: 3em;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#controls > li select {
+	color: #333;
+	font-size: 1em;
+}
+
+#controls > li a:hover {
+	color: #ff7600;
+}
+
+#scene { 
+	height: 100%;
+}
