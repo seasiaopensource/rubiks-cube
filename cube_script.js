@@ -41,32 +41,6 @@ class FirstRender {
     
       scene.add(new THREE.AmbientLight(0xffffff)); // Add focus color accent on cube
     
-      var orbitControl = new THREE.OrbitControls(camera, renderer.domElement); //cube posture setting and control
-    
-      function enableCameraControl() {
-        orbitControl.noRotate = false;
-      }
-    
-      function disablePostureCube() {
-        orbitControl.noRotate = true;
-      }
-    
-    
-      var SCREEN_HEIGHT = window.innerHeight;
-      var SCREEN_WIDTH = window.innerWidth;
-    
-      function isMouseOverCube(mouseX, mouseY) {
-        var directionVector = new THREE.Vector3();
-    
-        var x = ( mouseX / SCREEN_WIDTH ) * 2 - 1;
-        var y = -( mouseY / SCREEN_HEIGHT ) * 2 + 1;
-        directionVector.set(x, y, 1);
-      }
-    
-      function randomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      }
-    
       //Return the axis which has the greatest maginitude for the vector v
       function principalComponent(v) {
         var maxAxis = 'x',
@@ -87,7 +61,6 @@ class FirstRender {
       var lastCube; // track last movement
     
       var onCubeMouseDown = function(e, cube) {
-        disablePostureCube(); // disable posture movement of cube
     
         if(true || !isMoving) {
           clickVector = cube.rubikPosition.clone();
@@ -112,7 +85,6 @@ class FirstRender {
       }
     
       var onCubeMouseUp = function(e, cube) {
-    
         if(clickVector) {
           //TODO: use the actual mouse end coordinates for finer drag control
           var dragVector = cube.rubikPosition.clone();
@@ -125,7 +97,7 @@ class FirstRender {
             dragVectorOtherAxes[clickFace] = 0;
     
             var maxAxis = principalComponent(dragVectorOtherAxes);
-    
+            // console.log(maxAxis);
             var rotateAxis = transitions[clickFace][maxAxis],
                 direction = dragVector[maxAxis] >= 0 ? 1 : -1;
     
@@ -141,20 +113,13 @@ class FirstRender {
             console.log(direction);
             pushMove(cube, clickVector.clone(), rotateAxis, direction);
             startNextMove();
-            enableCameraControl();
           } else {
             console.log("Drag me some more please!");
           }
         }
       };
     
-    
-      element.on('mouseup', function(e) {
-        if(!isMouseOverCube(e.clientX, e.clientY)) {
-          if(lastCube)
-            onCubeMouseUp(e, lastCube);
-        }
-      });
+
     
     // Draw cube with colors 
       var colours = [0xC41E3A, 0x009E60, 0x0051BA, 0xFF5800, 0xFFD500, 0xFFFFFF],
@@ -184,10 +149,6 @@ class FirstRender {
     
         cube.on('mouseup', function(e) {
           onCubeMouseUp(e, cube);
-        });
-    
-        cube.on('mouseout', function(e) {
-          lastCube = cube;
         });
     
         scene.add(cube);
@@ -233,7 +194,6 @@ class FirstRender {
     
       var startNextMove = function() {
         var nextMove = moveQueue.pop();
-    
         if(nextMove) {
           clickVector = nextMove.vector;
           
